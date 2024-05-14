@@ -1,0 +1,68 @@
+
+@font-face {
+    font-family: 'Anton';
+    src: url('../assets/fonts/Anton-Regular.ttf');
+}
+
+:root {
+    --dark-grey: #121212;
+    --davy-grey: #4a4a4a;
+    --onyx: #3e3e3e;
+    --jet: #333333;
+    --eerie-black: #252525;
+    --night: #131313;
+    --lavender-mist: #e6ebf0;
+    --light-gray: #f5f5f5;
+    --gray: #d9d9d9;
+    --dark-gray: #b1b3b6;
+    --arsenic-gray: #636466;
+    --dark-jungle-green: #232323;
+    --black: #0a0a0a;
+    --white: #fff;
+    --grey-40: #565656;
+
+    --light-blue: #d9ebe9;
+    --muddy-green: #798f8c;
+
+    --orange: #FFA500;
+}
+
+/* Global */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--dark-jungle-green);
+    font-family: 'Anton';
+}
+
+a{
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--black);
+    height: 10000px;
+}
+
+*::-webkit-scrollbar{
+    display: none;
+}
+
+*::-webkit-scrollbar-track{
+    background-color: var(--dark-jungle-green);
+    border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: var(--dark-gray);
+    border-radius: 20px;
+}
+
+#mainContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}

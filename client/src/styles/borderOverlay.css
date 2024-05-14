@@ -1,0 +1,172 @@
+#pageBorder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pageBorder > .border {
+    position: absolute;
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    border: 1px solid var(--eerie-black);
+    border-radius: 10px;
+    background-color: transparent;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+/* Top Nav Bar */
+#pageBorder > .border > .top-nav{
+    width: 100%;
+    height: 75px;
+    padding: 10px 20px;
+}
+
+#pageBorder > .border > .top-nav > .nav-grid{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .left{
+    display: flex;
+    align-items: center;
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .left > p{
+    padding: 10px;
+    font-style: italic;
+    font-size: 28px;
+    color: var(--orange);
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .left > p > span{
+    color: var(--orange);
+    opacity: 1;
+    transition: opacity 150ms ease-in-out;
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .left > p > span.down{
+    opacity: 0;
+    pointer-events: none;
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .left > p > span.up{
+    opacity: 1;
+    pointer-events: all;
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .middle{
+    width: 100%;
+    opacity: 1;
+    transition: opacity 150ms ease-in-out;
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .middle.down{
+    opacity: 0;
+    pointer-events: none;
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .middle.up{
+    opacity: 1;
+    pointer-events: all;
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .middle > .nav-items{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .middle > .nav-items > a {
+    padding: 10px;
+    width: 90px;
+    text-align: center;
+    color: var(--davy-grey);
+    transition: color 250ms ease-in-out;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative; /* Ensure the pseudo-element is positioned correctly */
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .middle > .nav-items > a:not(.active):hover {
+    color: var(--arsenic-gray);
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .middle > .nav-items > a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--orange);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 250ms ease-in-out;
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .middle > .nav-items > a:not(.active):hover::after {
+    width: 100%;
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .middle > .nav-items > a.active {
+    color: white;
+    border-bottom: none;
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .middle > .nav-items > a.active::after {
+    width: 100%;
+}
+
+#pageBorder > .border > .top-nav > .nav-grid > .middle > .nav-items > a.active{
+    color: white;
+    border-bottom: 1px var(--orange);
+}
+
+/* Bottom Nav Bar */
+#pageBorder > .border > .bottom-nav{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+#pageBorder > .border > .bottom-nav > .social-icons{
+    display: flex;
+    gap: 20px;
+}
+
+#pageBorder > .border > .bottom-nav > .social-icons > .icon *{
+    color: var(--davy-grey);
+    width: 25px;
+    height: 25px;
+    transition: color 150ms ease-in-out;
+}
+
+#pageBorder > .border > .bottom-nav > .social-icons > .icon:hover *{
+    color: var(--white);
+}
+
+@media only screen and (max-width: 425px){
+    #pageBorder{
+        padding: 10px;
+    }
+
+    #pageBorder > .border{
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+    }
+}

@@ -41,65 +41,60 @@ function BorderOverlay() {
 
   return (
     <div id="pageBorder" className="pageBorder">
-      <div className="border">
-        <div className="top-nav">
-          <div className="nav-grid">
-            <div className="left">
-              <p>
-                J
-                <span
-                  className={`${scrollDirection === "down" ? "down" : "up"}`}
-                >
-                  Carpio
-                </span>
-              </p>
-            </div>
-            <div
-              className={`middle ${scrollDirection === "down" ? "down" : "up"}`}
-            >
-              <div className="nav-items">
-                <Link
-                  to={"/Home"}
-                  className={
-                    routeLocation === "/" || routeLocation === "/Home"
-                      ? "active"
-                      : ""
-                  }
-                >
-                  Home
-                </Link>
-                <Link
-                  to={"/Projects"}
-                  className={routeLocation === "/Projects" ? "active" : ""}
-                >
-                  Projects
-                </Link>
-              </div>
-            </div>
-            <div className="right"></div>
+      <div className="border"></div>
+      <div className="top-nav">
+        <div className="nav-grid">
+          <div className="left">
+            <p>
+              J
+              <span className={`${scrollDirection === "down" ? "down" : "up"}`}>
+                Carpio
+              </span>
+            </p>
           </div>
+          <div
+            className={`middle ${scrollDirection === "down" ? "down" : "up"}`}
+          >
+            <div className="nav-items">
+              <Link
+                to={"/Home"}
+                className={
+                  routeLocation === "/" || routeLocation === "/Home"
+                    ? "active"
+                    : ""
+                }
+              >
+                Home
+              </Link>
+              <Link
+                to={"/Projects"}
+                className={routeLocation === "/Projects" ? "active" : ""}
+              >
+                Projects
+              </Link>
+            </div>
+          </div>
+          <div className="right"></div>
         </div>
-        <div className="bottom-nav">
-          <div className="social-icons">
-            <Link
-              to={"https://www.facebook.com/tsuguko34/"}
-              target="_blank"
-              className="icon"
-            >
-              <faIcons.FaFacebookSquare />
-            </Link>
-            <Link
-              to={"https://www.linkedin.com/in/jazphercarpio"}
-              target="_blank"
-              className="icon"
-            >
-              <faIcons.FaLinkedin />
-            </Link>
-          </div>
-          <Link to={"#"} className="contact">
-            contact page
+      </div>
+      <div className="bottom-nav">
+        <div className="social-icons">
+          <Link
+            to={"https://www.facebook.com/tsuguko34/"}
+            target="_blank"
+            className="icon"
+          >
+            <faIcons.FaFacebookSquare />
+          </Link>
+          <Link
+            to={"https://www.linkedin.com/in/jazphercarpio"}
+            target="_blank"
+            className="icon"
+          >
+            <faIcons.FaLinkedin />
           </Link>
         </div>
+        <span className="scroll-top">scroll to top</span>
       </div>
     </div>
   );

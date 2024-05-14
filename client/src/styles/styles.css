@@ -28,14 +28,21 @@
 }
 
 /* Global */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: var(--dark-jungle-green);
+    color: var(--white);
     font-family: 'Anton';
+}
+
+img, picture, svg, video{
+    display: block;
+    max-width: 100%;
+}
+
+input, textarea, button, select{
+    font: inherit;
 }
 
 a{
@@ -44,6 +51,7 @@ a{
 
 body {
     background-color: var(--black);
+    min-height: 100vh;
     height: 10000px;
 }
 

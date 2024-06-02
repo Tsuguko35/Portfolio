@@ -1,3 +1,4 @@
 import BorderOverlay from "./BorderOverlay";
+import Loading from "./Loading";
 
-export { BorderOverlay };
+export { BorderOverlay, Loading };

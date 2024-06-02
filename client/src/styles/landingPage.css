@@ -11,7 +11,9 @@
 }
 
 #landingPage > .wrapper > p{
-    color: var(--white);
-    font-size: 24px;
+    color: var(--grey-text);
 }
 
+#landingPage > .wrapper > .text-size-header{
+    font-size: 64px;
+}

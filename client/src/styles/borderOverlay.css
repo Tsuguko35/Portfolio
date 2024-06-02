@@ -49,13 +49,38 @@
 }
 
 #pageBorder > .top-nav > .nav-grid > .left > p > span.down {
-    opacity: 0;
+    animation: tracking-out-contract 0.5s forwards;
     pointer-events: none;
 }
 
 #pageBorder > .top-nav > .nav-grid > .left > p > span.up {
-    opacity: 1;
+    animation: tracking-in-expand 0.5s forwards;
     pointer-events: all;
+}
+
+@keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+@keyframes tracking-out-contract {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
 }
 
 #pageBorder > .top-nav > .nav-grid > .middle {
@@ -98,26 +123,27 @@
 #pageBorder > .top-nav > .nav-grid > .middle > .nav-items > a::after {
     content: '';
     display: block;
-    width: 0;
+    width: 100%;
     height: 2px;
     background: var(--orange);
     position: absolute;
     bottom: 0;
     left: 0;
-    transition: width 250ms ease-in-out;
+    transform: scale(0);
+    transition: transform 250ms ease-in-out;
 }
 
 #pageBorder > .top-nav > .nav-grid > .middle > .nav-items > a:not(.active):hover::after {
-    width: 100%;
+    transform: scale(1);
 }
 
 #pageBorder > .top-nav > .nav-grid > .middle > .nav-items > a.active {
-    color: white;
+    color: var(--orange);
     border-bottom: none;
 }
 
 #pageBorder > .top-nav > .nav-grid > .middle > .nav-items > a.active::after {
-    width: 100%;
+    transform: scale(1);transform: scale(1);
 }
 
 #pageBorder > .top-nav > .nav-grid > .middle > .nav-items > a.active {

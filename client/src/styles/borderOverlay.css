@@ -20,6 +20,7 @@
     height: 75px;
     padding: 10px 40px;
     pointer-events: auto;
+
 }
 
 #pageBorder > .top-nav > .nav-grid {
@@ -27,6 +28,7 @@
     height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--eerie-black);
 }
 
 #pageBorder > .top-nav > .nav-grid > .left {

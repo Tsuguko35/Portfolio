@@ -10,6 +10,14 @@ function Loading() {
       div_Item.classList.remove("hide");
     });
     const text = document.getElementById("loading-text");
+    const loading = document.getElementById("loading");
+
+    if (loading) {
+      loading.classList.remove("active");
+      setTimeout(() => {
+        loading.classList.add("active");
+      }, 1000);
+    }
     if (text) {
       setTimeout(() => {
         text.classList.add("hide");
@@ -34,6 +42,7 @@ function Loading() {
       }
     }, 500);
   }, [location.pathname]);
+
   return (
     <div id="loading" className="loading">
       <p id="loading-text">Loading...</p>

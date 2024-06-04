@@ -8,16 +8,32 @@
 #landingPage > .wrapper{
     min-height: 100vh;
     padding: 100px 50px;
-    background-image: linear-gradient(to right, rgba(255, 165, 0, 0.2) 1px, transparent 1px),
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: linear-gradient(to right, rgba(255, 165, 0, 0.2) 1px, transparent 1px),
                       linear-gradient(to bottom, rgba(255, 165, 0, 0.2) 1px, transparent 1px);
     background-size: 20px 20px; 
-    mask-image: radial-gradient(ellipse 50% 25% at 50% 50%, #0a0a0a 0, transparent 100%);
+    mask-image: radial-gradient(ellipse 50% 25% at 50% 50%, #0a0a0a 0, transparent 100%); */
 }
 
-#landingPage > .wrapper > p{
+#landingPage > .wrapper > .flex-column{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#landingPage > .wrapper > .flex-column > p{
     color: var(--grey-text);
+    font-size: 28px;
+    
 }
 
-#landingPage > .wrapper > .text-size-header{
+
+
+#landingPage > .wrapper > .flex-column > .text-size-header{
     font-size: 64px;
+    color: var(--orange);
 }

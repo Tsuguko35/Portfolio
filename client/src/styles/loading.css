@@ -15,7 +15,7 @@
 
 #loading > p{
     position: absolute;
-    color: var(--grey-text);
+    color: var(--orange);
     font-size: 32px;
     letter-spacing: 3px;
     z-index: 1000;
@@ -40,7 +40,7 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: var(--arsenic-gray);
+    background-color: var(--eerie-black);
 }
 
 #loading > .loading-backgorund > div.hide{

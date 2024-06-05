@@ -1,8 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&display=swap');
 
-@font-face {
-    font-family: 'Anton';
-    src: url('../assets/fonts/Anton-Regular.ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 :root {
     --dark-grey: #121212;
@@ -53,7 +51,6 @@ a{
 body {
     background-color: var(--black);
     min-height: 100vh;
-    height: 10000px;
 }
 
 *::-webkit-scrollbar{

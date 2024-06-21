@@ -72,6 +72,18 @@ function BorderOverlay() {
               >
                 Projects
               </Link>
+              <Link
+                to={"/About"}
+                className={routeLocation === "/About" ? "active" : ""}
+              >
+                About Me
+              </Link>
+              <Link
+                to={"/Contact"}
+                className={routeLocation === "/Contact" ? "active" : ""}
+              >
+                Contact
+              </Link>
             </div>
           </div>
           <div className="right"></div>

@@ -1,0 +1,145 @@
+#projectsContent{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#projectsContent > .wrapper{
+    position: relative;
+    min-height: 100vh;
+    padding: 100px 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+#projectsContent > .wrapper > .project-list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+#projectsContent > .wrapper > .project-list > div{
+    width: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+#projectsContent > .wrapper > .project-list .project{
+    width: 100%;
+    max-width: 600px;
+    height: 120px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-end;
+    cursor: pointer;
+    user-select: none;
+}
+
+#projectsContent > .wrapper > .project-list .project > .project-number{
+    width: 20%;
+    font-size: 24px;
+    color: var(--black);
+    text-shadow: 
+        -1px -1px 0 var(--dark-jungle-green),  
+         1px -1px 0 var(--dark-jungle-green),
+        -1px  1px 0 var(--dark-jungle-green),
+         1px  1px 0 var(--dark-jungle-green); 
+    transition: all 0.3s ease-in-out;
+}
+
+#projectsContent > .wrapper > .project-list .project > .text-content{
+    width: 80%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+#projectsContent > .wrapper > .project-list .project > .text-content > .background{
+    position: absolute;
+    font-size: 120px;
+    left: 0;
+    bottom: -20px;
+    color: var(--black);
+    text-shadow: 
+        -1px -1px 0 var(--dark-jungle-green),  
+         1px -1px 0 var(--dark-jungle-green),
+        -1px  1px 0 var(--dark-jungle-green),
+         1px  1px 0 var(--dark-jungle-green);
+    z-index: -1;
+}
+
+#projectsContent > .wrapper > .project-list .project > .text-content > .title{
+    font-size: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+#projectsContent > .wrapper > .project-list > div:hover .project > .text-content > .title{
+    color: var(--orange);
+    letter-spacing: 2px;
+}
+
+#projectsContent > .wrapper > .project-list > div:hover .project > .project-number{
+    color: var(--orange);
+}
+
+@media only screen and (max-width: 1024px){
+    #projectsContent > .wrapper > .project-list .project > .text-content > .background{
+        font-size: 100px;
+    }
+
+    #projectsContent > .wrapper > .project-list .project > .text-content > .title{
+        font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    #projectsContent > .wrapper > .project-list .project > .text-content > .background{
+        font-size: 80px;
+    }
+
+    #projectsContent > .wrapper > .project-list .project > .text-content > .title{
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 489px){
+    #projectsContent > .wrapper > .project-list .project > .text-content > .background{
+        font-size: 60px;
+        bottom: -10px;
+    }
+
+    #projectsContent > .wrapper > .project-list .project > .text-content > .title{
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 399px){
+    #projectsContent > .wrapper > .project-list .project > .text-content > .background{
+        font-size: 50px;
+    }
+
+    #projectsContent > .wrapper > .project-list .project > .text-content > .title{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 354px){
+    #projectsContent > .wrapper > .project-list .project > .text-content > .background{
+        font-size: 40px;
+    }
+
+    #projectsContent > .wrapper > .project-list .project > .text-content > .title{
+        font-size: 14px;
+    }
+}

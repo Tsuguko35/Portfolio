@@ -9,10 +9,11 @@
     position: relative;
     min-height: 100vh;
     padding: 100px 50px;
+    padding-top: 200px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 100px;
 }
@@ -42,6 +43,8 @@
     align-items: flex-end;
     cursor: pointer;
     user-select: none;
+    opacity: 0;
+    animation: reveal 1s ease-in-out forwards;
 }
 
 #projectsContent > .wrapper > .project-list .project > .project-number{
@@ -77,6 +80,7 @@
         -1px  1px 0 var(--dark-jungle-green),
          1px  1px 0 var(--dark-jungle-green);
     z-index: -1;
+    transition: all 250ms ease-in-out;
 }
 
 #projectsContent > .wrapper > .project-list .project > .text-content > .title{
@@ -86,11 +90,19 @@
 
 #projectsContent > .wrapper > .project-list > div:hover .project > .text-content > .title{
     color: var(--orange);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 #projectsContent > .wrapper > .project-list > div:hover .project > .project-number{
     color: var(--orange);
+}
+
+#projectsContent > .wrapper > .project-list > div:hover .project > .text-content > .background{
+    text-shadow: 
+        -1px -1px 0 var(--orange-dark),  
+         1px -1px 0 var(--orange-dark),
+        -1px  1px 0 var(--orange-dark),
+         1px  1px 0 var(--orange-dark);
 }
 
 @media only screen and (max-width: 1024px){

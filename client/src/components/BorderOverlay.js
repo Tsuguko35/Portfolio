@@ -76,7 +76,7 @@ function BorderOverlay() {
                 to={"/About"}
                 className={routeLocation === "/About" ? "active" : ""}
               >
-                About Me
+                About
               </Link>
               <Link
                 to={"/Contact"}

@@ -38,24 +38,22 @@
                       linear-gradient(to bottom, rgba(255, 165, 0, 0.2) 1px, transparent 1px);
     background-size: 20px 20px; 
     mask-image: radial-gradient(ellipse 50% 25% at 50% 50%, #0a0a0a 0, transparent 100%);
-    transform: scale(0);
-    animation: scale-up 1s ease-in-out forwards 1s;
+    opacity: 0;
+    animation: scale-up 1s ease-in-out forwards 2s;
     pointer-events: none;
     z-index: -1;
 }
 
 @keyframes scale-up{
     0%{
-        transform: scale(0);
+        opacity: 0;
     }
-    50%{
-        transform: scale(1.2);
-    }
-
     100%{
-        transform: scale(1);
+        opacity: 1;
     }
 }
+
+
 
 #landingPage > .wrapper > .hero > .flex-column{
     width: fit-content;
@@ -70,6 +68,11 @@
     
 }
 
+#landingPage > .wrapper > .hero > .flex-column > .text-size-sub-header{
+    animation: reveal 1s ease-in-out forwards 1s;
+    opacity: 0;
+}
+
 #landingPage > .wrapper > .hero > .flex-column > .text-size-header{
     font-size: 86px;
     text-align: center;
@@ -77,7 +80,8 @@
     background-size: 800% 800%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradientAnimation 7s ease infinite;
+    animation: gradientAnimation 7s ease infinite, reveal 1s ease-in-out forwards 1.2s;
+    opacity: 0;
 }
 
 #landingPage > .wrapper > .hero > .flex-column > .text-cursive{
@@ -87,17 +91,18 @@
     font-family: 'Pacifico';
     font-style: italic;
     transform: rotate(-7deg);
+    animation: reveal-rotated 1s ease-in-out forwards 1.4s;
+    opacity: 0;
 }
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
+@keyframes reveal-rotated{
+    0%{
+        transform: rotate(-7deg) translateY(-20px);
+        opacity: 0;
     }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
+    100%{
+        transform: rotate(-7deg) translateY(0);
+        opacity: 1;
     }
 }
 
@@ -108,6 +113,8 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 50px;
+    animation: reveal 1s ease-in-out forwards 1.6s;
+    opacity: 0;
 }
 
 #landingPage > .wrapper > .actions > .action{
@@ -115,6 +122,7 @@
     align-items: center;
     gap: 5px;
     cursor: pointer;
+   
 }
 
 #landingPage > .wrapper > .actions > .action > svg{

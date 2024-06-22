@@ -31,7 +31,12 @@ function ProjectsContent() {
               touchHold={true}
               key={index}
             >
-              <Link to={project.link} target="_blank" className="project">
+              <Link
+                to={project.link}
+                target="_blank"
+                className="project"
+                style={{ animationDelay: `1.${index + 1}s` }}
+              >
                 <p className="project-number"># {index + 1}</p>
                 <div className="text-content">
                   <p className="background">Project {index + 1}</p>

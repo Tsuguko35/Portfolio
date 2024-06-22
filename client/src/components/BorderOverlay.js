@@ -43,7 +43,9 @@ function BorderOverlay() {
     <div id="pageBorder" className="pageBorder">
       <div className="border"></div>
       <div className="top-nav">
-        <div className="nav-grid">
+        <div
+          className={`nav-grid ${scrollDirection === "down" ? "down" : "up"}`}
+        >
           <div className="left">
             <p>
               J

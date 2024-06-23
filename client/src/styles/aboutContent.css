@@ -96,6 +96,42 @@
     font-family: 'Pacifico';
 }
 
+#aboutContent > .wrapper > .about-details > .details > .image{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#aboutContent > .wrapper > .about-details > .details > .image > .img-holder{
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    animation: reveal 1s ease-in-out forwards 1.2s;
+    box-shadow: 0px 0px 10px 2px var(--orange-dark);
+    opacity: 0;
+    cursor: default;
+    user-select: none;
+    overflow: hidden;
+    display: none;
+}
+
+#aboutContent > .wrapper > .about-details > .details > .image > .img-holder > img{
+    width: 100%;
+    height: auto;
+    filter: grayscale(1);
+    object-fit: cover;
+    transition: all 250ms ease-in-out;
+}
+
+#aboutContent > .wrapper > .about-details > .details > .image > .img-holder:hover > img{
+    filter: grayscale(0);
+}
+
 #aboutContent > .wrapper > .about-details > .details > .details-content{
     display: flex;
     flex-direction: column;
@@ -190,4 +226,41 @@
 
 #aboutContent > .wrapper > .skills-container > .skills-group > .skill:hover > p{
     color: var(--orange);
+}
+
+@media only screen and (max-width: 768px){
+    #aboutContent > .wrapper > .about-details > .details > .detail-header > .title{
+        font-size: 52px;
+    }
+
+    #aboutContent > .wrapper > .about-details > .details > .detail-header > .label{
+        font-size: 18px;
+    }
+
+    #aboutContent > .wrapper > .about-details > .details > .details-content > p{
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    #aboutContent > .wrapper > .about-details > .details > .image > .img-holder{
+        display: flex;
+    }
+
+    #aboutContent > .wrapper > .about-details > .image{
+        display: none;
+    }
+
+    #aboutContent > .wrapper > .about-details > .details{
+        width: 100%;
+        align-items: center;
+    }
+
+    #aboutContent > .wrapper > .about-details > .details > .detail-header{
+        align-items: flex-start;
+    }
+
+    #aboutContent > .wrapper > .about-details > .details > .details-content > p{
+        text-align: left;
+    }
 }

@@ -2,18 +2,34 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/borderOverlay.css";
 
+import { Squeeze as Hamburger } from "hamburger-react";
+
 // Icons
 import * as faIcons from "react-icons/fa";
+import { GetWindowWidth } from "../utils";
 
 function BorderOverlay() {
   const location = useLocation();
+  const windowWidth = GetWindowWidth();
 
   const [scrollDirection, setScrollDirection] = useState(null);
+  const [navOpen, setNavOpen] = useState(false);
+
+  useEffect(() => {
+    if (navOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [navOpen]);
 
   const routeLocation = useMemo(() => {
     return window.location.pathname;
   }, [location]);
-  console.log(routeLocation);
 
   useEffect(() => {
     let lastScrollTop =
@@ -42,6 +58,46 @@ function BorderOverlay() {
   return (
     <div id="pageBorder" className="pageBorder">
       <div className="border"></div>
+      {windowWidth < 768 && (
+        <nav className={`mobile-nav ${navOpen ? "open" : ""}`}>
+          <div className="wrapper">
+            <div className="nav-items mobile">
+              <Link
+                to={"/Home"}
+                className={
+                  routeLocation === "/" || routeLocation === "/Home"
+                    ? "active"
+                    : ""
+                }
+                onClick={() => setNavOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to={"/Projects"}
+                className={routeLocation === "/Projects" ? "active" : ""}
+                onClick={() => setNavOpen(false)}
+              >
+                Projects
+              </Link>
+              <Link
+                to={"/About"}
+                className={routeLocation === "/About" ? "active" : ""}
+                onClick={() => setNavOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                to={"/Contact"}
+                className={routeLocation === "/Contact" ? "active" : ""}
+                onClick={() => setNavOpen(false)}
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        </nav>
+      )}
       <div className="top-nav">
         <div
           className={`nav-grid ${scrollDirection === "down" ? "down" : "up"}`}
@@ -88,7 +144,15 @@ function BorderOverlay() {
               </Link>
             </div>
           </div>
-          <div className="right"></div>
+          <div className="right">
+            <Hamburger
+              toggled={navOpen}
+              toggle={setNavOpen}
+              label="Show Nav"
+              hideOutline={true}
+              color="#d9d9d9"
+            />
+          </div>
         </div>
       </div>
       <div className="bottom-nav">

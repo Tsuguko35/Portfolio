@@ -23,6 +23,7 @@
     display: flex;
     align-items: center;
     overflow: hidden;
+    transition: z-index 250ms ease-in-out 0.5s;
 }
 
 #pageBorder > .top-nav > .nav-grid {
@@ -47,6 +48,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(10, 10, 10, 0.5);
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     border-top-left-radius: 10px;
@@ -55,24 +57,11 @@
     pointer-events: none;
 }
 
-#pageBorder > .top-nav > .nav-grid.up::after{
-    position: absolute;
-    content: ' ';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
-    z-index: 1;
-    pointer-events: none;
-}
-
 #pageBorder > .top-nav > .nav-grid > .left {
     position: relative;
     display: flex;
     align-items: center;
-    z-index: 2;
+    z-index: 99;
 }
 
 #pageBorder > .top-nav > .nav-grid > .left > p {
@@ -145,14 +134,22 @@
     pointer-events: all;
 }
 
-#pageBorder > .top-nav > .nav-grid > .middle > .nav-items {
+#pageBorder .nav-items {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
 }
 
-#pageBorder > .top-nav > .nav-grid > .middle > .nav-items > a {
+#pageBorder .nav-items.mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#pageBorder .nav-items > a{
     padding: 10px;
     width: 90px;
     text-align: center;
@@ -163,11 +160,11 @@
     position: relative;
 }
 
-#pageBorder > .top-nav > .nav-grid > .middle > .nav-items > a:not(.active):hover {
+#pageBorder .nav-items > a:not(.active):hover {
     color: var(--arsenic-gray);
 }
 
-#pageBorder > .top-nav > .nav-grid > .middle > .nav-items > a::after {
+#pageBorder .nav-items > a::after {
     content: '';
     display: block;
     width: 100%;
@@ -180,23 +177,34 @@
     transition: transform 250ms ease-in-out;
 }
 
-#pageBorder > .top-nav > .nav-grid > .middle > .nav-items > a:not(.active):hover::after {
+#pageBorder .nav-items > a:not(.active):hover::after {
     transform: scale(1);
 }
 
-#pageBorder > .top-nav > .nav-grid > .middle > .nav-items > a.active {
+#pageBorder .nav-items > a.active {
     color: var(--orange);
     border-bottom: none;
 }
 
-#pageBorder > .top-nav > .nav-grid > .middle > .nav-items > a.active::after {
+#pageBorder .nav-items > a.active::after {
     transform: scale(1);transform: scale(1);
 }
 
-#pageBorder > .top-nav > .nav-grid > .middle > .nav-items > a.active {
+#pageBorder .nav-items > a.active {
     color: white;
     border-bottom: 1px var(--orange);
 }
+
+#pageBorder > .top-nav > .nav-grid > .right{
+    position: relative;
+    justify-content: flex-end;
+    padding-right: 20px;
+    align-items: center;
+    z-index: 99;
+    display: none;
+}
+
+
 
 /* Bottom Nav Bar */
 #pageBorder > .bottom-nav {
@@ -237,6 +245,56 @@
     color: var(--orange);
 }
 
+/* Mobile Nav */
+#pageBorder > .mobile-nav{
+    position: fixed;
+    width: 100dvw;
+    height: 100dvh;
+    top: 0;
+    right: -100%;
+    background-color: var(--dark-jungle-green);
+    transition: all 0.5s ease-in-out;
+    z-index: 90;
+}
+
+#pageBorder > .mobile-nav.open{
+    right: 0;
+}
+
+#pageBorder > .mobile-nav.open + .top-nav{
+    z-index: 99 !important;
+    animation: reveal 1s ease-in-out forwards 0.6s;
+}
+
+#pageBorder > .mobile-nav.open + .nav-grid.up::after {
+    background-color: none;
+    content: "";
+}
+
+
+
+#pageBorder > .mobile-nav > .wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px 0px;
+}
+
+@media only screen and (max-width: 767px) {
+    #pageBorder > .top-nav > .nav-grid > .middle{
+        display: none;
+    }
+
+    #pageBorder > .top-nav > .nav-grid > .right{
+        display: flex;
+    }
+
+    #pageBorder > .top-nav > .nav-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media only screen and (max-width: 425px) {
     #pageBorder > .border {
         width: calc(100vw - 20px);
@@ -247,11 +305,11 @@
 
     #pageBorder > .top-nav {
         top: 10px;
-        padding: 10px 25px;
     }
 
     #pageBorder > .bottom-nav {
         bottom: 10px;
         padding: 10px 25px;
     }
+    
 }

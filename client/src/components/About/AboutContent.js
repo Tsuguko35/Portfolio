@@ -12,7 +12,7 @@ function AboutContent() {
           <div className="image">
             <div className="img-holder">
               <img
-                src="https://res.cloudinary.com/dkwgg59ur/image/upload/v1719041046/Portfolio_Files/itr3t2rv84oz5idnqdbs.webp"
+                src="https://res.cloudinary.com/dkwgg59ur/image/upload/v1719105225/Portfolio_Files/hmppayoiaarwqdk43ks5.webp"
                 alt="Pofile Picture"
                 draggable={false}
               />
@@ -22,6 +22,15 @@ function AboutContent() {
             <div className="detail-header">
               <p className="title">About</p>
               <p className="label">A little bit about who I am</p>
+            </div>
+            <div className="image">
+              <div className="img-holder">
+                <img
+                  src="https://res.cloudinary.com/dkwgg59ur/image/upload/v1719105225/Portfolio_Files/hmppayoiaarwqdk43ks5.webp"
+                  alt="Pofile Picture"
+                  draggable={false}
+                />
+              </div>
             </div>
             <div className="details-content">
               <p className="paragraph">

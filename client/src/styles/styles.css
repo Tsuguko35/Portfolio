@@ -30,6 +30,7 @@
     --light-font: 'Quicksand'
 }
 
+
 /* Global */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -42,6 +43,12 @@
 img, picture, svg, video{
     display: block;
     max-width: 100%;
+}
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+    outline: none;
 }
 
 input, textarea, button, select{

@@ -55,6 +55,11 @@
     border-top-right-radius: 10px;
     z-index: 1;
     pointer-events: none;
+    transition: background-color 1s ease-in-out;
+}
+
+#pageBorder > .top-nav.mobile-open > .nav-grid.up::after{
+    background-color: transparent;
 }
 
 #pageBorder > .top-nav > .nav-grid > .left {

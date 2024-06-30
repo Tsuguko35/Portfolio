@@ -98,7 +98,11 @@ function BorderOverlay() {
           </div>
         </nav>
       )}
-      <div className="top-nav">
+      <div
+        className={`top-nav ${
+          windowWidth < 768 && navOpen ? "mobile-open" : ""
+        }`}
+      >
         <div
           className={`nav-grid ${scrollDirection === "down" ? "down" : "up"}`}
         >
@@ -172,7 +176,7 @@ function BorderOverlay() {
             <faIcons.FaLinkedin />
           </Link>
         </div>
-        <span className="scroll-top">scroll to top</span>
+        {/* <span className="scroll-top">scroll to top</span> */}
       </div>
     </div>
   );

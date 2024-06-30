@@ -32,6 +32,7 @@
     display: flex !important;
     align-items: center;
     justify-content: center;
+    transition: all 250ms ease-in-out;
 }
 
 #projectsContent > .wrapper > .project-list .project{
@@ -90,7 +91,10 @@
 
 #projectsContent > .wrapper > .project-list > div:hover .project > .text-content > .title{
     color: var(--orange);
-    letter-spacing: 1px;
+    text-shadow: 
+    0 0 5px rgba(255, 165, 0, 0.5),
+    0 0 10px rgba(255, 165, 0, 0.3),
+    0 0 15px rgba(255, 165, 0, 0.1);
 }
 
 #projectsContent > .wrapper > .project-list > div:hover .project > .project-number{
@@ -133,6 +137,14 @@
 
     #projectsContent > .wrapper > .project-list .project > .text-content > .title{
         font-size: 22px;
+    }
+
+    #projectsContent > .wrapper{
+        padding-top: 75px;
+    }
+
+    #projectsContent > .wrapper > .project-list{
+        gap: 50px;
     }
 }
 

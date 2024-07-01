@@ -1,4 +1,5 @@
 import { About, LandingPage, Projects } from "../pages";
+import Contact from "../pages/Contact";
 
 const routes = [
   {
@@ -16,6 +17,10 @@ const routes = [
   {
     path: "/About",
     component: <About />,
+  },
+  {
+    path: "/Contact",
+    component: <Contact />,
   },
 ];
 

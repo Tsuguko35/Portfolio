@@ -1,0 +1,60 @@
+#contactContent{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#contactContent > .wrapper{
+    position: relative;
+    min-height: 100vh;
+    padding: 100px 50px;
+    padding-top: 150px;
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+
+#contactContent > .wrapper > .title{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: reveal 1s ease-in-out forwards 1s;
+    opacity: 0;
+}
+
+#contactContent > .wrapper > .title > .main{
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: 1px;
+    background: linear-gradient(270deg, #FFA500, #c7c7c7, #FFA500, #c7c7c7);
+    background-size: 800% 800%;
+    animation: gradientAnimation 7s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+#contactContent > .wrapper > .title > .sub{
+    position: relative;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Pacifico';
+    transform: translateX(100px);
+}
+
+#contactContent > .wrapper > .title > .sub::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 80px;
+    height: 1px;
+    transform: translateX(-90px);
+    background-color: var(--arsenic-gray);
+}

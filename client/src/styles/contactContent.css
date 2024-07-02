@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 100px;
+    gap: 50px;
 }
 
 #contactContent > .wrapper > .title{
@@ -57,4 +57,102 @@
     height: 1px;
     transform: translateX(-90px);
     background-color: var(--arsenic-gray);
+}
+
+#contactContent > .wrapper > .contact-container{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+#contactContent > .wrapper > .contact-container > .socials,
+#contactContent > .wrapper > .contact-container > .form{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#contactContent > .wrapper > .contact-container > .socials > .text{
+    font-family: 'Open Sans';
+    line-height: 150%;
+}
+
+#contactContent > .wrapper > .contact-container > .socials > .contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#contactContent > .wrapper > .contact-container > .socials > .contacts > .contact{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#contactContent > .wrapper > .contact-container > .socials > .contacts > .contact > svg{
+    width: 20%;
+    max-width: 20px;
+    height: 20px;
+}
+
+#contactContent > .wrapper > .contact-container > .socials > .contacts > .contact > svg *{
+    color: var(--arsenic-gray);
+    transition: all 250ms ease-in-out;
+}
+
+#contactContent > .wrapper > .contact-container > .socials > .contacts > .contact > p{
+    width: 80%;
+    font-family: 'Open Sans';
+    color: var(--arsenic-gray);
+    cursor: default;
+    transition: all 250ms ease-in-out;
+    word-wrap: break-word;
+}
+
+#contactContent > .wrapper > .contact-container > .socials > .contacts > .contact:hover > p{
+    color: white;
+    text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.5),
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+#contactContent > .wrapper > .contact-container > .socials > .contacts > .contact:hover > svg *{
+    color: white;
+}
+
+
+@media only screen and (max-width: 768px){
+    #contactContent > .wrapper > .contact-container{
+        flex-direction: column;
+    }
+
+    #contactContent > .wrapper > .contact-container > .socials, 
+    #contactContent > .wrapper > .contact-container > .form{
+        width: 100%;
+    }
+
+    #contactContent > .wrapper > .contact-container > .socials{
+        gap: 50px;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    #contactContent > .wrapper > .title > .main{
+        font-size: 56px;
+    }
+
+    #contactContent > .wrapper > .title > .sub{
+        font-size: 18px;
+        transform: translateX(80px);
+    }
+
+    #contactContent > .wrapper > .title > .sub::after{
+        width: 60px;
+        transform: translateX(-70px);
+    }
 }

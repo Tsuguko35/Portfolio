@@ -3,6 +3,7 @@ import Loading from "./Loading";
 import ProjectsContent from "./Projects/ProjectsContent";
 import AboutContent from "./About/AboutContent";
 import ContactContent from "./Contact/ContactContent";
+import ContactForm from "./Reusable/ContactForm";
 
 export {
   BorderOverlay,
@@ -10,4 +11,5 @@ export {
   ProjectsContent,
   AboutContent,
   ContactContent,
+  ContactForm,
 };

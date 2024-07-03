@@ -7,6 +7,7 @@ import { Squeeze as Hamburger } from "hamburger-react";
 // Icons
 import * as faIcons from "react-icons/fa";
 import { GetWindowWidth } from "../utils";
+import { routes } from "../config";
 
 function BorderOverlay() {
   const location = useLocation();
@@ -65,7 +66,11 @@ function BorderOverlay() {
               <Link
                 to={"/Home"}
                 className={
-                  routeLocation === "/" || routeLocation === "/Home"
+                  routeLocation === "/" ||
+                  routeLocation === "/Home" ||
+                  !routes.some((route) =>
+                    route.path.includes(location.pathname)
+                  )
                     ? "active"
                     : ""
                 }
@@ -104,7 +109,9 @@ function BorderOverlay() {
         }`}
       >
         <div
-          className={`nav-grid ${scrollDirection === "down" ? "down" : "up"}`}
+          className={`nav-grid ${scrollDirection === "down" ? "down" : "up"} ${
+            navOpen ? "mobile-open" : ""
+          }`}
         >
           <div className="left">
             <p>
@@ -121,7 +128,11 @@ function BorderOverlay() {
               <Link
                 to={"/Home"}
                 className={
-                  routeLocation === "/" || routeLocation === "/Home"
+                  routeLocation === "/" ||
+                  routeLocation === "/Home" ||
+                  !routes.some((route) =>
+                    route.path.includes(location.pathname)
+                  )
                     ? "active"
                     : ""
                 }

@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    opacity: 0;
+    animation: reveal 1s ease-in-out forwards 1.3s;
 }
 
 #contactForm > .custom-input{

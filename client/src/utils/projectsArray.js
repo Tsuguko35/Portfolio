@@ -17,6 +17,12 @@ const projects_list = [
     title: "Eden Home",
     link: "https://goedenhome.com/",
   },
+  {
+    image:
+      "https://res.cloudinary.com/dkwgg59ur/image/upload/v1720015647/Portfolio_Files/Projects/amnkjz9kqyqovib3r8t5.webp",
+    title: "Ark Web Services",
+    link: "https://ark-web-solutions-development.vercel.app/",
+  },
 ];
 
 export { projects_list };

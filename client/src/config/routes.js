@@ -7,6 +7,10 @@ const routes = [
     component: <LandingPage />,
   },
   {
+    path: "/*",
+    component: <LandingPage />,
+  },
+  {
     path: "/Home",
     component: <LandingPage />,
   },

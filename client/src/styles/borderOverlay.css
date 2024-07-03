@@ -1,8 +1,8 @@
 /* Page Border */
 #pageBorder > .border {
     position: fixed;
-    width: calc(100vw - 40px);
-    height: calc(100vh - 40px);
+    width: calc(100dvw - 40px);
+    height: calc(100dvh - 40px);
     top: 20px;
     left: 20px;
     border: 1px solid var(--eerie-black);
@@ -15,7 +15,7 @@
 #pageBorder > .top-nav {
     position: fixed;
     top: 20px;
-    width: 100vw;
+    width: 100dvw;
     z-index: 10;
     height: 75px;
     padding: 1px 21px;
@@ -37,11 +37,7 @@
     transition: all 250ms ease-in-out;
 }
 
-#pageBorder > .top-nav > .nav-grid.down::after{
-    opacity: 0;
-}
-
-#pageBorder > .top-nav > .nav-grid.up::after{
+#pageBorder > .top-nav > .nav-grid::after{
     position: absolute;
     content: ' ';
     top: 0;
@@ -49,8 +45,8 @@
     width: 100%;
     height: 100%;
     background-color: rgba(10, 10, 10, 0.5);
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     z-index: 1;
@@ -58,8 +54,12 @@
     transition: background-color 1s ease-in-out;
 }
 
-#pageBorder > .top-nav.mobile-open > .nav-grid.up::after{
+#pageBorder > .top-nav > .nav-grid.mobile-open::after{
     background-color: transparent;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 #pageBorder > .top-nav > .nav-grid > .left {
@@ -271,13 +271,6 @@
     animation: reveal 1s ease-in-out forwards 0.6s;
 }
 
-#pageBorder > .mobile-nav.open + .nav-grid.up::after {
-    background-color: none;
-    content: "";
-}
-
-
-
 #pageBorder > .mobile-nav > .wrapper{
     display: flex;
     justify-content: center;
@@ -302,8 +295,8 @@
 
 @media only screen and (max-width: 425px) {
     #pageBorder > .border {
-        width: calc(100vw - 20px);
-        height: calc(100vh - 20px);
+        width: calc(100dvw - 20px);
+        height: calc(100dvh - 20px);
         top: 10px;
         left: 10px;
     }

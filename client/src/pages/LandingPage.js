@@ -3,6 +3,7 @@ import "../styles/landingPage.css";
 import { MdOutlineFileDownload, MdWavingHand } from "react-icons/md";
 import { IoRocket } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import myCV from "../assets/pdf/Jazpher Carpio-CV.pdf";
 
 function LandingPage() {
   useEffect(() => {
@@ -34,7 +35,13 @@ function LandingPage() {
           </div>
           <div className="action">
             <MdOutlineFileDownload />
-            <p className="action-text">Resume</p>
+            <a
+              href={myCV}
+              download="Jazpher Carpio - CV"
+              className="action-text"
+            >
+              Download CV
+            </a>
           </div>
         </div>
       </div>

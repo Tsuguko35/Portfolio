@@ -71,7 +71,6 @@
 
 #pageBorder > .top-nav > .nav-grid > .left > p {
     padding: 10px;
-    font-style: italic;
     font-size: 28px;
     user-select: none;
     color: var(--orange);

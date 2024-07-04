@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/aboutContent.css";
 import { FaHtml5, FaCss3, FaReact, FaNodeJs, FaPhp } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
-import { SiMysql, SiMongodb } from "react-icons/si";
+import { SiMysql, SiMongodb, SiPhpmyadmin, SiFirebase } from "react-icons/si";
 
 function AboutContent() {
   return (
@@ -93,6 +93,14 @@ function AboutContent() {
             <div className="skill">
               <SiMongodb />
               <p>MongoDB</p>
+            </div>
+            <div className="skill">
+              <SiPhpmyadmin />
+              <p>phpMyAdmin</p>
+            </div>
+            <div className="skill">
+              <SiFirebase />
+              <p>Firebase</p>
             </div>
           </div>
         </div>
